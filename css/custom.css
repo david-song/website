@@ -1,0 +1,29 @@
+.slides{
+    width:100%;
+}
+.carousel-inner{
+    width:100%;
+    height: 100%;
+    margin:0;
+}
+
+.well{
+    margin: 25px 0 0 0;
+    padding: 25px 10px 25px 10px;
+}
+
+#projectgrid{
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.carousel-control.left, 
+.carousel-control.right {
+    background-image: none
+}
+ .navbar, .transparent , .navbar-inner {
+   background: rgba(0,0,0,0.4);
+}
+#aboutme p, #aboutme h2, #aboutme img{
+    margin: 2%;
+}
