@@ -1,51 +1,64 @@
 <html>
 
 <head>
-   <!-- Contactmetrics.com -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://stats.contactmetrics.com//";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 175]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
-    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-
-</script>
-<noscript><p><img src="http://stats.contactmetrics.com/piwik.php?idsite=175" style="border:0" alt="" /></p></noscript>
-<!-- End Contactmetrics.com Code -->
-
     <meta charset="utf-8">
-    <title>Website</title>
+    <title>David Song</title>
     <meta name="viewport" content="width=device-width" , initial-scale="1.0">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
-    <link rel="stylesheet" type="text/css" href="css/custom.css">
-    <script src="https://5dc.us/l.js"></script>
-</head>
+    <link rel="stylesheet" type="text/css" href="_/components/css/main.css">
 
-<body>
-    <div class="container-fluid">
-        <div class="jumbotron">
-            <h1>David Song</h1>
-            <p>Welcome to my website!</p>
-            <img>
+    <body>
+        <div class="wrap">
+        <nav class="nav">
+            <ul class="nav-title-area">
+                <li class="nav-title">
+                    <a href="index.html">
+                        <img class="logo" src="css/img/logo.png"> David Song
+                    </a>
+                </li>
+            </ul>
+            <section class="nav-section">
+                <ul>
+                    <li><a href="blog.html">Blog</a>
+                    </li>
+                    <li><a href="projects.html">Portfolio</a>
+                    </li>
+                    <li><a href="about.html">About</a>
+                    </li>
+                    <li><a href="">Share</a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+
+        <div class="banner">
+            <div class="">
+                <div class="">
+                    <h1>David Song</h1>
+                    <p class="motto">Create, Design, Live</p>
+                </div>
+            </div>
+        </div>
+        <div class="linkboxes">
+            <div class="row">
+                <div class="">
+                    <h2>Projects</h2>
+                </div>
+                <div class="">
+                    <h2>Blog</h2>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="row">
+                <div class="footer-social">
+
+                </div>
+                <div class="footer-email-connect">
+
+                </div>
+            </div>
         </div>
     </div>
-    <script type="text/javascript">
-if (!Array.prototype.forEach){Array.prototype.forEach = function(fun /*, thisArg */){"use strict";if (this === void 0 || this === null || typeof fun !== "function"){throw new TypeError();}var t = Object(this), len = t.length >>> 0, thisArg = arguments.length >= 2 ? arguments[1] : void 0;	for (var i = 0; i < len; i++){	if (i in t){fun.call(thisArg, t[i], i, t);}}};			}
-!function(){"use strict";function a(a,b,c){"addEventListener"in window?a.addEventListener(b,c,!1):"attachEvent"in window&&a.attachEvent("on"+b,c)}function b(){var a,b=["moz","webkit","o","ms"];for(a=0;a<b.length&&!window.requestAnimationFrame;a+=1)window.requestAnimationFrame=window[b[a]+"RequestAnimationFrame"];window.requestAnimationFrame||(c(" RequestAnimationFrame not supported"),window.requestAnimationFrame=function(a){a()})}function c(a){u.log&&"object"==typeof console&&console.log(p+"[Host page"+r+"]"+a)}function d(a){function b(){function a(){h(v),f()}i(a,v,"resetPage")}function d(a){c(" iFrame "+a.id+" removed."),a.parentNode.removeChild(a)}function e(){var a=t.substr(q).split(":");return{iframe:document.getElementById(a[0]),id:a[0],height:a[1],width:a[2],type:a[3]}}function j(){var b=a.origin,d=v.iframe.src.split("/").slice(0,3).join("/");if(u.checkOrigin&&(c(" Checking conection is from: "+d),""+b!="null"&&b!==d))throw new Error("Unexpected message received from: "+b+" for "+v.iframe.id+". Message was: "+a.data);return!0}function k(){return p===(""+t).substr(0,q)}function l(){var a=v.type in{"true":1,"false":1};return a&&c(" Ignoring init message from meta parent page"),a}function m(){u.messageCallback({iframe:v.iframe,message:t.substr(t.lastIndexOf(":")+1)})}function n(){if(null===v.iframe)throw new Error("iFrame ("+v.id+") does not exist on "+r);return!0}function s(){switch(v.type){case"close":d(v.iframe),u.resizedCallback(v);break;case"message":m();break;case"reset":g(v);break;default:b(),u.resizedCallback(v)}}var t=a.data,v={};k()&&(c(" Received: "+t),v=e(),!l()&&n()&&j()&&(o=!1,s()))}function e(){null===s&&(s={x:void 0!==window.pageXOffset?window.pageXOffset:document.documentElement.scrollLeft,y:void 0!==window.pageYOffset?window.pageYOffset:document.documentElement.scrollTop},c(" Get position: "+s.x+","+s.y))}function f(){null!==s&&(window.scrollTo(s.x,s.y),c(" Set position: "+s.x+","+s.y),s=null)}function g(a){function b(){h(a),j("reset","reset",a.iframe)}c(" Size reset requested by "+("init"===a.type?"host page":"iFrame")),e(),i(b,a,"init")}function h(a){function b(b){a.iframe.style[b]=a[b]+"px",c(" IFrame ("+a.iframe.id+") "+b+" set to "+a[b]+"px")}u.sizeHeight&&b("height"),u.sizeWidth&&b("width")}function i(a,b,d){d!==b.type?(c(" Requesting animation frame"),window.requestAnimationFrame(a)):a()}function j(a,b,d){c("["+a+"] Sending msg to iframe ("+b+")"),d.contentWindow.postMessage(p+b,"*")}function k(){function b(a){return""===a&&(i.id=a="iFrameResizer"+n++,c(" Added missing iframe ID: "+a)),a}function d(){c(" IFrame scrolling "+(u.scrolling?"enabled":"disabled")+" for "+k),i.style.overflow=!1===u.scrolling?"hidden":"auto",i.scrolling=!1===u.scrolling?"no":"yes"}function e(){("number"==typeof u.bodyMargin||"0"===u.bodyMargin)&&(u.bodyMarginV1=u.bodyMargin,u.bodyMargin=""+u.bodyMargin+"px")}function f(){return k+":"+u.bodyMarginV1+":"+u.sizeWidth+":"+u.log+":"+u.interval+":"+u.enablePublicMethods+":"+u.autoResize+":"+u.bodyMargin+":"+u.heightCalculationMethod+":"+u.bodyBackground+":"+u.bodyPadding}function h(b){a(i,"load",function(){j("iFrame.onload",b,i),!o&&u.heightCalculationMethod in t&&g({iframe:i,height:0,width:0,type:"init"})}),j("init",b,i)}var i=this,k=b(i.id);d(),e(),h(f())}function l(){function a(a){if("IFRAME"!==a.tagName)throw new TypeError("Expected <IFRAME> tag, found <"+a.tagName+">.");k.call(a)}function b(a){if(a=a||{},"object"!=typeof a)throw new TypeError("Options is not an object.");for(var b in v)v.hasOwnProperty(b)&&(u[b]=a.hasOwnProperty(b)?a[b]:v[b])}window.iFrameResize=function(c,d){b(c),Array.prototype.forEach.call(document.querySelectorAll(d||"iframe"),a)}}function m(a){a.fn.iFrameResize=function(b){return u=a.extend({},v,b),this.filter("iframe").each(k).end()}}var n=0,o=!0,p="[iFrameSizer]",q=p.length,r=":"+location.href,s=null,t={max:1,scroll:1,bodyScroll:1,documentElementScroll:1},u={},v={autoResize:!0,bodyBackground:null,bodyMargin:null,bodyMarginV1:8,bodyPadding:null,checkOrigin:!0,enablePublicMethods:!1,heightCalculationMethod:"offset",interval:32,log:!1,messageCallback:function(){},resizedCallback:function(){},scrolling:!1,sizeHeight:!0,sizeWidth:!1};b(),a(window,"message",d),l(),"jQuery"in window&&m(jQuery)}();
-</script>
-<iframe frameborder="0" width="100%" height="790" seamless="seamless" scrolling="no"  src="http://contactmetrics.com/davidsong/form/94211686/"></iframe>
-<script type="text/javascript">iFrameResize({autoResize: true});</script>
-
-</body>
-<script src="js/jquery-2.1.1.min.js"></script>
-
-<script src="js/bootstrap.min.js"></script>
-
+    </body>
 
 </html>
