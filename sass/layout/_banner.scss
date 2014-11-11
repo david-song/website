@@ -1,0 +1,17 @@
+$float:left;
+.banner {
+  @include gridle_container();
+  background: #6858fa;
+  border: solid 1px #000;
+  height:90%;
+  .banner-container {
+    height:100%;
+    @include gridle_set((
+    grid:4, push:2
+    ));
+    border: solid 1px #000;
+    .banner-content{
+      border: solid 1px #000;
+    }
+  }
+}

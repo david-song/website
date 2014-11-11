@@ -1,3 +1,13 @@
-$primary-color: ;
-$secondary-color:;
-$reset-color:;
+
+$primary-color: #212121;
+$secondary-color:#2196F3;
+$reset-color: #F5F5F5;
+
+$text-color-primary: $primary-color;
+$text-color-secondary: $secondary-color;
+$text-color-reset: $reset-color;
+
+$text-font-family-primary:"Roboto";
+$text-font-family-secondary: "Lato";
+@include web-fonts($text-font-family-primary);
+@include web-fonts($text-font-family-secondary);

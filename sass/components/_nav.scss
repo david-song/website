@@ -1,14 +1,30 @@
-
 .nav {
-  @include grid-row();
+  @include gridle_container();
+  background: #d6523f;
+  height:8%;
+  @include gridle_state (mobile){
+    .logo-title{
+      @include gridle_hide( mobile );
+    }
+    .nav-section{
+      //@include gridle_hide( mobile );
+    }
+  }
   .nav-title-area {
-    @include grid-column(3);
+    @include gridle(3);
     border: solid 1px #000;
+    height:100%;
+
+  //  @include centerText(1.2rem, 8%);
   }
   .nav-section {
-    @include grid-column(9);
+    @include gridle(9);
     border: solid 1px #000;
+    text-align:right;
+    height:100%;
+    li {
+      display: inline;
+    }
   }
-  background: #d6523f;
 
 }

@@ -1,0 +1,10 @@
+// import settings :
+@import 'layout/grid_settings';
+
+// generate classes :
+@include gridle_generate_classes ( );
+// manage container width :
+.container {
+	max-width : 100%;
+	margin : 0 auto;
+}

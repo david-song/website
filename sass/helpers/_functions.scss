@@ -1,0 +1,5 @@
+@mixin centerText($size, $containersize){
+  padding-top: ($containersize - $size) / 2;
+  padding-bottom: ($containersize - $size) / 2;
+  
+}
