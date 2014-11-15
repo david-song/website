@@ -1,29 +1,32 @@
 .twodesc{
+  padding:2%;
   @include gridle_container();
   height:45%;
-  background: #edc360;
+
 border: solid 1px #000;
   .desc1{
     @include gridle_set((
-    grid:6
-    mobile:(
-      grid:12
+    grid : 6,
+    mobile : (
+      grid : 12
     )
     ));
+    text-align:center;
     height:100%;
+    background: #edc360;
     border: solid 1px #000;
   }
   .desc2{
     @include gridle_set((
-    grid:6
-    mobile:(
-      grid:12
+    grid : 6,
+    mobile : (
+      grid : 12
     )
     ));
     height:100%;
+    text-align:center;
+    background: #edc360;
     border: solid 1px #000;
   }
-  h1{
-    text-align: center;
-  }
+
 }

@@ -1,5 +1,12 @@
 @mixin centerText($size, $containersize){
   padding-top: ($containersize - $size) / 2;
   padding-bottom: ($containersize - $size) / 2;
-  
+
+}
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }

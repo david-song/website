@@ -1,8 +1,11 @@
 .nav {
   @include gridle_container();
+  position:fixed;
+  width:100%;
   background: #d6523f;
   height:8%;
-  @include gridle_state (mobile){
+  z-index:1;
+  @include gridle_state (mobile) {
     .logo-title{
       @include gridle_hide( mobile );
     }
@@ -24,7 +27,10 @@
     height:100%;
     li {
       display: inline;
+
     }
   }
-
+}
+.vertical-align{
+  @include vertical-align();
 }
