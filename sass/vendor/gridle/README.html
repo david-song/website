@@ -1,0 +1,90 @@
+<h1 id="gridle-v1-3-33-">gridle (v1.3.33)</h1>
+<p>One grid system to rule them all (.scss)</p>
+<p>Gridle is a set of complete and simple settings, mixins and classes that make the creation and usage of grid systems (even complex ones) really simple. All of this with full responsive capabilities</p>
+<h2 id="-visit-website-http-gridle-org-for-full-documentation"><a href="http://gridle.org/">Visit Website</a> for full documentation</h2>
+<h2 id="quick-start">Quick start</h2>
+<p>Importing gridle</p>
+<pre><code class="lang-scss">import &quot;gridle/gridle&quot;
+</code></pre>
+<p>Configure your grid :</p>
+<pre><code class="lang-scss">@include gridle_setup( (
+    context : 12,
+    gutter-width : 20px,
+    direction : rtl,
+    // etc...
+) );
+</code></pre>
+<p>Register states (media queries) (optional) :</p>
+<pre><code class="lang-scss">@include gridle_register_state ( mobile , (
+    max-width : 480px 
+) );
+@include gridle_register_state ( tablet , (
+    min-width : 481px,
+    max-width : 1024px
+) ) ;
+
+// even with full custom queries :
+@include gridle_register_state ( landscape, (
+    query : &quot;(orientation : landscape)&quot;
+) );
+</code></pre>
+<p>Generate all classes :</p>
+<pre><code class="lang-scss">@include gridle_generate_classes();
+</code></pre>
+<p>Use your grid in hrml :</p>
+<pre><code class="lang-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;grid-12 hide-print&quot;&gt;
+        Header
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-8 grid-mobile-12&quot;&gt;
+        Content
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-4 grid-mobile-12 hide-print&quot;&gt;
+        Sidebar
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Or with mixins :</p>
+<pre><code class="lang-scss">.container {
+    @include gridle_container();
+    max-width:960px;
+    margin:0 auto;
+}
+#header {
+    @include gridle(12);
+}
+#sidebar {
+    @include gridle(8);
+    @include gridle(12,  mobile );
+}
+#sidebar {
+    @include gridle(4);
+    @include gridle_hide( mobile );
+}
+@footer {
+    @include gridle(12);
+}
+</code></pre>
+<p>Customize your content look and feel with Gridle mixins</p>
+<pre><code class="lang-scss">#sidebar {
+    background : red;
+
+    @include gridle_state(mobile) {
+        background : green;
+    }
+}
+</code></pre>
+<h2 id="generate-custom-classes">Generate custom classes</h2>
+<p>Gridle allows you to generate custom classes that will be available for each of your states. Here&#39;s an exemple</p>
+<pre><code class="lang-scss">@include gridle_generate_custom_class( ( &#39;center&#39;, &#39;-&#39;, &#39;%state&#39; ) ) {
+    text-align : center;
+}
+</code></pre>
+<p>This will produce the classes : center, center-mobile, center-tablet and center-landscape automatically</p>
+<h2 id="more-control-with-gridle-js-">More control with Gridle{.js}</h2>
+<p>Gridle{.js} allows you to be notified when states changes. It find automatically your states registered in your sass. Simple but powerful</p>
+<pre><code class="lang-javascript">Gridle.on(&#39;update&#39;, function(updatedStates, activeStates, unactiveStates) {
+    // do something here...
+});
+// see documentation for more informations...
+</code></pre>

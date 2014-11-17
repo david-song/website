@@ -1,0 +1,30 @@
+<h2 id="mobile-first">Mobile First</h2>
+<p>Gridle is the perfect fit for your mobile first projects. Here how you can start :</p>
+<h3 id="setting-up-the-grid">Setting up the grid</h3>
+<p>For mobile first, you have to set the different states for your grid like so</p>
+<pre><code class="lang-scss">@include gridle_register_state( xs, (
+    max-width : 768px
+) );
+@include gridle_register_state( sm , (
+    min-width : 768px
+) );
+@include gridle_register_state( md, (
+    min-width : 992px
+) );
+@include gridle_register_state( lg, (
+    min-width : 1200px
+) );
+</code></pre>
+<blockquote>
+<p>You can use the mixin <strong>gridle_register_default_mobile_first_states()</strong> that will make this part for you. The values are bases on <strong>bootstrap settings</strong></p>
+</blockquote>
+<h3 id="grid-items">Grid items</h3>
+<p>Then, you have to tell your grid items to take the full with on small state (if you need so).
+This is only if you don&#39;t want to write each time grid-xs-12 in your html (if your number of columns are 12).</p>
+<pre><code class="lang-scss">[class*=&quot;grid-&quot;] {
+    @include gridle_state( xs ) {
+        width:100%;
+    }
+}
+</code></pre>
+<p>And your good to go!</p>

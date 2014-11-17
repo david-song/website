@@ -1,0 +1,16 @@
+<h2 id="setup">Setup</h2>
+<p>In order for Gridle to work, the <code>gridle_setup()</code> mixin <strong>needs to be run</strong>. This is where you can pass core configuration variables like the amount of columns (context) and the width of the gutter.</p>
+<pre><code class="lang-fn">@include gridle_setup( {settings} );
+</code></pre>
+<pre><code class="lang-scss">$settings : (
+    context : 12,             // number of columns in your grid
+    gutter-width : 20px,        // size of the gutters
+    direction : ltr,             // direction
+    name-multiplicator : 1     // to generate like grid-5, grid-10, etc...
+    // and more... (see in advanced settings section)
+);
+@include gridle_setup($settings);
+</code></pre>
+<blockquote>
+<p>Make sure that your states do not have the same name as a gridle option like gutter-width...</p>
+</blockquote>

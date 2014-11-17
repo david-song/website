@@ -1,0 +1,39 @@
+/*
+Error: Invalid CSS after "$brown:": expected expression (e.g. 1px, bold), was "##795548;"
+        on line 5 of _base.scss
+
+1: $dark-gray:#424242;
+2: $gray:#9E9E9E;
+3: 
+4: $dark-black:#212121;
+5: $brown:##795548;
+6: 
+7: $white: #FAFAFA;
+
+Backtrace:
+_base.scss:5
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/scss/parser.rb:1163:in `expected'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/script/lexer.rb:220:in `expected!'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/script/parser.rb:572:in `assert_expr'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/script/parser.rb:62:in `parse'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/scss/parser.rb:1025:in `sass_script'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/scss/parser.rb:607:in `variable'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/scss/parser.rb:660:in `block_child'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/scss/parser.rb:653:in `block_contents'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/scss/parser.rb:117:in `stylesheet'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/scss/parser.rb:42:in `parse'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/engine.rb:393:in `_to_tree'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/exec/sass_scss.rb:396:in `run'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/exec/base.rb:52:in `parse'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/exec/base.rb:19:in `parse!'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/bin/sass:13:in `<top (required)>'
+/home/david/.prepros/resources/app/ruby/loader.rb:15:in `load'
+/home/david/.prepros/resources/app/ruby/loader.rb:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"$brown:\": expected expression (e.g. 1px, bold), was \"##795548;\"\A         on line 5 of _base.scss\A \A 1: $dark-gray:#424242;\A 2: $gray:#9E9E9E;\A 3: \A 4: $dark-black:#212121;\A 5: $brown:##795548;\A 6: \A 7: $white: #FAFAFA;"; }

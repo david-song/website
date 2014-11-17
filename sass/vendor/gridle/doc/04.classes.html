@@ -1,0 +1,226 @@
+<h2 id="classes">Classes</h2>
+<p>When you&#39;re happy with your custom grid system, Gridle will provide you with multiple types of classes. Here&#39;s the list:</p>
+<h3 id="grid-classes">Grid Classes</h3>
+<p>These are the base classes of the grid system. The root class is the <strong>container</strong>, which contains all the classes: <strong>grid-1</strong>, <strong>grid-2</strong>, <strong>grid-3</strong> and so on.</p>
+<pre><code class="lang-fn">.container
+.grid-{columns-count}
+.grid-{state}-{columns-count}
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;grid-8&quot;&gt;
+        I make 8 columns width
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-4&quot;&gt;
+        I make 4 columns width
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="grid-parent-class-nested-grids-">Grid Parent Class (nested grids)</h3>
+<p>This class <strong>has to be applied on a grid-x</strong> element that will contains a nested grid.</p>
+<pre><code class="lang-fn">.parent
+.parent-{state}
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;grid-8 parent&quot;&gt;
+        &lt;div class=&quot;grid-4 grid-mobile-12&quot;&gt;
+            I&#39;m a nested column    
+        &lt;/div&gt;
+        &lt;div class=&quot;grid-4 grid-mobile-12&quot;&gt;
+            I&#39;m a nested column    
+        &lt;/div&gt;
+        &lt;div class=&quot;grid-4 grid-mobile-12&quot;&gt;
+            I&#39;m a nested column    
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-4&quot;&gt;
+        I make 4 columns width
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="clear-each-class-new-">Clear Each Class <strong>NEW</strong></h3>
+<p>This mixin will make all the {x}n+1 direct child clear itself automatically.</p>
+<pre><code class="lang-fn">.clear-each-{x}
+.clear-each-{state}-{x}
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;grid-6 parent clear-each-2&quot;&gt;
+        &lt;div class=&quot;grid-6&quot;&gt;
+            I have a different height of my neighbour
+            &lt;br /&gt;
+            cause of this line
+            &lt;br /&gt;
+            and this one....
+        &lt;/div&gt;
+        &lt;div class=&quot;grid-6&quot;&gt;
+            I have a different height of my neighbour
+        &lt;/div&gt;
+        &lt;div class=&quot;grid-6&quot;&gt;
+            I have a different height of my neighbour
+        &lt;/div&gt;
+        &lt;div class=&quot;grid-6&quot;&gt;
+            I have a different height of my neighbour
+            &lt;br /&gt;
+            cause of this line
+            &lt;br /&gt;
+            and this one....
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-6&quot;&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="centered-grid-class">Centered Grid Class</h3>
+<p>This class <strong>has to be applied on a grid-x</strong> element and will center the column.</p>
+<pre><code class="lang-fn">.centered
+.centered-{state}
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;grid-8 centered&quot;&gt;
+        This column will be centered
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-8 centered-tablet&quot;&gt;
+        This column will be centered only on tablet
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="vertical-aligned-grid-items-beta-">Vertical Aligned Grid Items <strong>BETA</strong></h3>
+<p>Gridle allows you to align vertically your grid elements based on his neighbours in the same line. This has to be used with caution and you must test if it fit your particular need.</p>
+<pre><code class="lang-fn">.vertical-align-top
+.vertical-align-top-{state}
+.vertical-align-middle
+.vertical-align-middle-{state}
+.vertical-align-bottom
+.vertical-align-bottom-{state}
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;parent vertical-align-middle&quot;&gt;
+    &lt;div class=&quot;grid-4&quot;&gt;
+        I&#39;m the tallest element in the line
+        &lt;br /&gt;
+        cause of this line
+        &lt;br /&gt;
+        and this one...
+        &lt;br /&gt;
+        and this one...
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-4&quot;&gt;
+        I will be vertically centered cause I&#39;m the smallest
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-6&quot;&gt;
+        I will be also vertically centered cause I&#39;m not so tall...
+        &lt;br /&gt;
+        Even with this line...
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>These classes apply a <strong>font-size of 0</strong> on the parent itself and a <strong>font-size of 1rem</strong> on the direct childs. This is to avoid the display:inline-block space thing... You have to set your font on the html tag for this to work fine...</p>
+<blockquote>
+<p>When using this, the direction parameter will not have any effect anymore...
+These classes have to be applied on a parent/container element that has direct grid- childs</p>
+</blockquote>
+<h3 id="push-pull-classes">Push &amp; Pull Classes</h3>
+<p>The push and pull classes are used to offset the grid&#39;s elements or even swap two of them for SEO purposes. The HTML structure will not be altered.</p>
+<pre><code class="lang-fn">.push-{columns-count}
+.push-{state}-{columns-count}
+.pull-{columns-count}
+.pull-{state}-{columns-count}
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;grid-8 push-4&quot;&gt;
+    I make 8 columns width and offset 4 columns to the right
+&lt;/div&gt;
+&lt;div class=&quot;grid-4 pull-9&quot;&gt;
+    I make 4 columns width and offset 8 columns to the left
+&lt;/div&gt;
+</code></pre>
+<h3 id="prefix-suffix-classes">Prefix &amp; Suffix Classes</h3>
+<p>The prefix and suffix classes are used to create blanks before or after a grid element.</p>
+<pre><code class="lang-fn">.prefix-{columns-count}
+.prefix-{state}-{columns-count}
+.suffix-{columns-count}
+.suffix-{state}-{columns-count}
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;grid-8 suffix-2&quot;&gt;
+    I make 8 columns width and I have 2 columns of dead space to my right
+&lt;/div&gt;
+&lt;div class=&quot;grid-4 prefix-2&quot;&gt;
+    I make 4 columns width and I have 2 columns of dead space to my left
+&lt;/div&gt;
+</code></pre>
+<h3 id="hide-show-classes">Hide, show, ... Classes</h3>
+<p>These classes are used to hide, show or set to “visibility&quot; to some elements for certain states (cf. States)</p>
+<pre><code class="lang-fn">.hide
+.show
+.show-inline
+.not-visible
+.visible
+.hide-{state}
+.show-{state}
+.show-inline-{state}
+.not-visible-{state}
+.visible-{state}
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;grid-8 hide-tablet&quot;&gt;
+    I&#39;m not display (display:none) on &quot;tablet&quot; state
+&lt;/div&gt;
+&lt;div class=&quot;grid-4 not-visible-mobile&quot;&gt;
+    I&#39;m not visible (visibility:hidden) on &quot;mobile&quot; state
+&lt;/div&gt;
+&lt;div class=&quot;grid-12 hide visible-mobile&quot;&gt;
+    I&#39;m hided by default but displayed on mobile
+&lt;/div&gt;
+</code></pre>
+<h3 id="float-classes">Float Classes</h3>
+<p>These classes are used to make float some elements for certain states (cf. States)</p>
+<pre><code class="lang-fn">.float-left
+.float-right
+.float-{state}-left
+.float-{state}-right
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;grid-8 float-right float-mobile-left&quot;&gt;
+    I&#39;m a div that float right normally, but left on mobile
+&lt;/div&gt;
+</code></pre>
+<h3 id="clear-classes">Clear Classes</h3>
+<p>These classes are used to clear float on some elements for certain states (cf. States)</p>
+<pre><code class="lang-fn">.clear
+.clear-left
+.clear-right
+.clear-{state}
+.clear-{state}-left
+.clear-{state}-right
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;grid-8 clear-right clear-mobile-left&quot;&gt;
+    I&#39;m a div that clear right normally, but left on mobile
+&lt;/div&gt;
+</code></pre>
+<h3 id="gutters-classes">Gutters Classes</h3>
+<p>These classes are used to delete the gutters on certain columns for certain states (cf. States)</p>
+<pre><code class="lang-fn">.no-gutter
+.no-gutter-left
+.no-gutter-right
+.no-gutter-top
+.no-gutter-bottom
+.no-gutter-{state}
+.no-gutter-{state}-left
+.no-gutter-{state}-right
+.no-gutter-{state}-top
+.no-gutter-{state}-bottom
+
+.gutter
+.gutter-left
+.gutter-right
+.gutter-top
+.gutter-bottom
+.gutter-{state}
+.gutter-{state}-left
+.gutter-{state}-right
+.gutter-{state}-top
+.gutter-{state}-bottom
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;grid-8 no-gutter-mobile&quot;&gt;
+    No gutters on mobile
+&lt;/div&gt;
+</code></pre>
+<blockquote>
+<p> Secret : The word <strong>&quot;margin&quot;</strong> instead of <strong>&quot;gutter&quot;</strong> work too...</p>
+</blockquote>

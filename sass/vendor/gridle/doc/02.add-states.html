@@ -1,0 +1,85 @@
+<h2 id="add-states">Add States</h2>
+<p>Gridle includes all you need to generate a <strong>fully customizable, responsive grid system</strong>.
+The principle is a piece of cake. Gridle provides you with a mixin which creates (or registers) &quot;states&quot;. States are Gridle&#39;s convention that helps you specifically name your responsive breakpoints. Refer to the Gridle state directly within the element&#39;s scss rule or by adding auto generated class to the element. Here&#39;s how to use states:</p>
+<h3 id="register-a-state">Register a State</h3>
+<p>To register a state, Gridle provides a simple and unique mixin:</p>
+<pre><code class="lang-fn">@include gridle_register_state ( name , {settings} );
+</code></pre>
+<pre><code class="lang-scss">/**
+* States are usually initialized with screen sizes :
+*/
+@include gridle_register_state( mobile , (
+    max-width : 400px
+) ):
+@include gridle_register_state( tablet, (
+    min-width : 401px,
+    max-width : 767px,
+    gutter-width : 30px     // change the gutters for this state
+) );
+
+/**
+ * States can also be generated without creating classes:
+ * Useful when you need a state that cover both the mobile
+ * and the tablet for example...
+ */
+@include gridle_register_state( moblet , (
+    min-width : 767px,
+    classes : false        // the gridle_generate_class will not generate classes for this state
+) ); 
+
+/**
+* State with can also include media queries:
+*/
+@include gridle_register_state( iphone-landscape , (
+    query : &quot;only screen and (max-device-width: ...&quot;
+) );
+</code></pre>
+<blockquote>
+<p>The state can have all the settings available in gridle. If your state doesn&#39;t specify gutter width for example, it will default to what has been set in <code>gridle_setup()</code>.</p>
+</blockquote>
+<h3 id="using-states">Using States</h3>
+<p>After you have registered you states, the <code>@include gridle_generate_classes()</code> mixin will generate additional classes to be used in your HTML. Here&#39;s an example with classes and mixins:</p>
+<h4 id="classes">Classes</h4>
+<pre><code class="lang-markup">&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;grid-3 grid-tablet-6 grid-mobile-12&quot;&gt;
+        3 columns, 6 on tablet, 12 on mobile
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-12 hide-mobile&quot;&gt;
+        12 columns but I&#39;m hided on mobile 
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h4 id="mixins">Mixins</h4>
+<pre><code class="lang-scss">/**
+* Using mixins :
+*/
+#content {
+    @include gridle( 8 );
+    @include gridle( 12 , mobile );
+}
+#sidebar {
+    @include gridle( 4 );
+    @include gridle_hide( mobile );
+}
+</code></pre>
+<blockquote>
+<p>Register state has to be done <strong>before</strong> generating classes (cf. Generate Classes Mixin)</p>
+</blockquote>
+<h3 id="register-custom-classes">Register custom classes</h3>
+<p>You can also add your own custom class to be created for every state:</p>
+<pre><code class="lang-fn">@include gridle_generate_custom_class( {pattern} )
+</code></pre>
+<pre><code class="lang-scss">// the pattern is a list element or sass
+@include gridle_generate_custom_class( ( &#39;center&#39;, &#39;-&#39;, &#39;%state&#39; ) ) {
+    text-align : center;
+}
+</code></pre>
+<p>This will generate the following classes if you have registered the states (mobile, tablet, coco)</p>
+<pre><code class="lang-fn">.center
+.center-mobile
+.center-tablet
+.center-coco
+</code></pre>
+<blockquote>
+<p>Make sure to use only the -, --, <em>, _</em> or the %- (witch is configured using the $gridle-class-separator setting) as class separators.</p>
+</blockquote>

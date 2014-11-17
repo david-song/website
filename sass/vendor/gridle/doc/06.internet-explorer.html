@@ -1,0 +1,18 @@
+<h2 id="internet-explorer">Internet Explorer</h2>
+<p>Internet Explorer... Holy crap! Troubles ahead you say? Don&#39;t worry – Gridle is fully compatible with it... as long as you go the extra length with this the old chap.</p>
+<h3 id="ie7-support">IE7 support</h3>
+<p>This option control the generation of expression in css to allow IE7 to render width correctly. If you don&#39;t need IE7 support, you can desactivate this option. This will generate a little bit less css for your grid.</p>
+<pre><code class="lang-scss">@include gridle_setup( (
+    context : 12,
+    // etc...
+    ie7-support : : true; // by default is false
+) );
+</code></pre>
+<h3 id="respondjs">RespondJS</h3>
+<p>In order to make the media queries works on IE7-8, you have to integrate <a href="https://github.com/scottjehl/Respond" title="Respond JS" target="_blank">RespondJS</a>, witch is a nice little plug&amp;play library written by Scott Jehl</p>
+<pre><code class="lang-markup">&lt;link href=&quot;css/style.css&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; /&gt;
+...
+&lt;!--[if (gte IE 6)&amp;(lte IE 9)]&gt;
+&lt;script src=&quot;js/vendor/respond.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre>

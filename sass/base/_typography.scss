@@ -8,12 +8,11 @@ $font-weight-bold : 600;
 	margin:0;
 	text-decoration: none;
 	outline: none;
+	list-style-type: none;
 	font-family: $text-font-family-primary;
+	color:$text-color-primary;
 }
 body{
 		font-size:1.2rem;
-    color:$text-color-primary;
-}
-a{
-  color:$text-color-primary;
+		background-color:$grey-100;
 }

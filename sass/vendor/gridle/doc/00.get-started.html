@@ -1,0 +1,78 @@
+<h2 id="get-started">Get Started</h2>
+<p>Below is the basic usage of gridle and how to use it in your own project. From here you can make adjustments to the setup and states to suit your specific needs.</p>
+<h3 id="_settings-scss">_settings.scss</h3>
+<pre><code class="lang-scss">// import gridle
+@import &quot;gridle/gridle&quot;;
+
+// setting up the grid
+@include gridle_setup( (
+    context : 12,
+    gutter-width : 20px,
+    direction : rtl,
+    // etc...
+) );
+
+// make the use of media queries really easy
+@include gridle_register_state ( mobile , (
+    max-width : 480px 
+) );
+@include gridle_register_state ( tablet , (
+    min-width : 481px,
+    max-width : 1024px
+) ) ;
+
+// even with full custom queries :
+@include gridle_register_state ( landscape, (
+    query : &quot;(orientation : landscape)&quot;
+) );
+</code></pre>
+<h3 id="grid-scss">grid.scss</h3>
+<pre><code class="lang-scss">// import settings :
+@import &#39;settings&#39;;
+
+// generate classes :
+@include gridle_generate_classes ( );
+
+// manage container width :
+.container {
+    max-width : 960px;
+    margin : 0 auto;
+}
+</code></pre>
+<h3 id="index-html">index.html</h3>
+<pre><code class="lang-markup">&lt;!-- If want to use mixins, no need to add classes --&gt;
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;grid-12&quot; id=&quot;header&quot;&gt;
+        I&#39;m the header, 12 columns width
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-8 grid-mobile-12&quot; id=&quot;content&quot;&gt;
+        I&#39;m the content, 8 columns width, but 12 on mobile
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-4 grid-mobile-12&quot; id=&quot;sidebar&quot;&gt;
+        I&#39;m the sidebar, 4 columns width, but 12 on mobile
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="style-css">style.css</h3>
+<pre><code class="lang-scss">// import settings :
+@import &#39;settings&#39;;
+
+#header {
+    @include gridle ( 12 );
+}
+#content {
+    @include gridle ( 8 );
+    @include gridle ( 12 , &#39;mobile&#39; );
+}
+#sidebar {
+    // sidebar will make 4 columns width
+    @include gridle ( 4 );
+    @include gridle ( 12 , mobile );
+    background : yellow ;
+
+    // update sidebar look and feel for mobile and tablet
+    @include gridle_state (  mobile tablet  ) {
+        background : red;
+    }
+}
+</code></pre>

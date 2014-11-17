@@ -1,13 +1,14 @@
+@import "mdcolors";
+$primary-color: $grey-900;
+$primary-light-color: $grey-800;
+$secondary-color:$blue-500;
+$reset-color: $grey-100;
 
-$primary-color: #212121;
-$secondary-color:#2196F3;
-$reset-color: #F5F5F5;
-
-$text-color-primary: $primary-color;
+$text-color-primary: $grey-100;
 $text-color-secondary: $secondary-color;
 $text-color-reset: $reset-color;
 
-$text-font-family-primary:"Roboto";
+$text-font-family-primary:"Open Sans";
 $text-font-family-secondary: "Lato";
 @include web-fonts($text-font-family-primary);
 @include web-fonts($text-font-family-secondary);

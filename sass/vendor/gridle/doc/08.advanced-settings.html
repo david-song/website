@@ -1,0 +1,145 @@
+<h2 id="advanced-settings">Advanced Settings</h2>
+<p>Here&#39;s some advanced options to customize a little more your grid</p>
+<h3 id="register-a-custom-column-new-">Register a custom column <strong>NEW</strong></h3>
+<p>Gridle will generate for you all the columns you need, depending on the $gridle-columns-count setting. That&#39;s fine. But sometime, you need some special columns... For example, a column of 33.333%, or 66.6667%, etc... This setting is made for you.</p>
+<pre><code class="lang-fn">@include gridle_register_column( name , column-count , context );
+</code></pre>
+<pre><code class="lang-scss">/**
+ * Here we register a column with the ratio 1/3
+ * where the &quot;1&quot; is the column-count, and the &quot;3&quot; is the context
+ * in witch the column width will be calculated
+ */
+@include gridle_register_column( &#39;1on3&#39; , 1, 3 );
+
+// another fancy example :
+@include gridle_register_column( &#39;myFancyColumn&#39; , 12, 33 ); // 36.36%
+</code></pre>
+<h3 id="register-an-automatic-clear-each-class-new-">Register an automatic clear-each class <strong>NEW</strong></h3>
+<p>Is some situation, you will need to clear some grid items each x item. This can be painful to make. This mixin solve this problem for you. It allows you to register classes that will be generated with all the others classes like so :</p>
+<pre><code class="lang-fn">@include gridle_register_clear_each( {clearEach} , {clearWhat} : both );
+</code></pre>
+<pre><code class="lang-scss">// make this before the class generation :
+@include gridle_register_clear_each( 2 , left );
+@include gridle_register_clear_each( 4 ); // clear both each 4 item
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;parent clear-each-2&quot;&gt;
+    &lt;div class=&quot;grid-6&quot;&gt;
+        I&#39;m a content that does not have the same height as my neighbours
+        &lt;br /&gt;
+        And I&#39;m the line responsible for this...
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-6&quot;&gt;
+        I&#39;m a content that does not have the same height as my neighbours
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-6&quot;&gt; &lt;!-- I will be cleared automaticaly --&gt;
+        I&#39;m a content that does not have the same height as my neighbours
+    &lt;/div&gt;
+    &lt;div class=&quot;grid-6&quot;&gt;
+        I&#39;m a content that does not have the same height as my neighbours
+        &lt;br /&gt;
+        And I&#39;m the line responsible for this...
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="class-generation">Class Generation</h3>
+<p>These options allow you to generate specific classes in order to make your grid more flexible.</p>
+<pre><code class="lang-scss">@include gridle_setup( (
+    context : 12,
+    // etc...
+    generate-push-classes     : true,
+    generate-pull-classes         : true,
+    generate-prefix-classes     : true,
+    generate-suffix-classes     : true,
+    generate-helpers-classes     : true
+) );
+
+/* helpers classes are the hide-on-{state}, not-visible-on-{state},
+clear, float classes etc... */
+</code></pre>
+<h3 id="html-states-classes">HTML States Classes</h3>
+<p>This option allow you to generate all the classes scoped in a html.{state} class. This allows you to view your grid by applying the name of your state as class on the html tag without needing the media queries. This is more a debug option that a real production one...</p>
+<pre><code class="lang-scss">@include gridle_setup( (
+    context : 12,
+    // etx...
+    html-states-classes : true // activate the behavior
+) );
+</code></pre>
+<p>Then :</p>
+<pre><code class="lang-markup">&lt;html class=&quot;mobile&quot;&gt;
+    &lt;!-- this will activate the mobile state --&gt;
+</code></pre>
+<h3 id="generate-json-settings-for-gridle-js-">Generate JSON settings (for gridle.js)</h3>
+<p>This options allow you to enable / disable the generation of JSON settings in the css. This JSON is needed if you want to use gridle.js</p>
+<pre><code class="lang-scss">$gridle-generate-json-settings : false; // default is true
+</code></pre>
+<h3 id="class-prefix">Class Prefix</h3>
+<p>This option allow you to specify a prefix that will be added at all the gridle generate classes. <strong>The only class not affected by that is the gridle-debug one...</strong></p>
+<pre><code class="lang-scss">$gridle-class-prefix : &quot;hello-&quot;; // by default, this setting is set to &quot;&quot;
+</code></pre>
+<pre><code class="lang-markup">&lt;div class=&quot;hello-container&quot;&gt;
+    &lt;div class=&quot;hello-grid-2 hello-push-5 hello-hide-mobile&quot;&gt;
+        ... All the classes will be affected ...
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="class-patterns-new-">Class Patterns <strong>NEW</strong></h3>
+<p>These options are quite advanced stuffs but can be usefull if you want to customize the generated class names exactly as you want.
+Each pattern define how the classname will be generated. These are the tokens that you can use in the patterns :</p>
+<pre><code class="lang-fn">%-        : Represent a separator (that can be customized with the $gridle-class-separator setting) :
+%state        : Represent the state name (mobile, coco, etc...)
+%count        : Represent the column index (1, 2, 10, etc...)
+</code></pre>
+<p>Here&#39;s a list of all the available patterns :</p>
+<pre><code class="lang-scss">$gridle-container-name-pattern             : (&#39;container&#39;);
+
+$gridle-grid-name-pattern                 : (&#39;grid&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;%count&#39;);
+$gridle-push-name-pattern                 : (&#39;push&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;%count&#39;);
+$gridle-pull-name-pattern                 : (&#39;pull&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;%count&#39;);
+$gridle-prefix-name-pattern                 : (&#39;prefix&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;%count&#39;);
+$gridle-suffix-name-pattern                 : (&#39;suffix&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;%count&#39;);
+
+$gridle-parent-name-pattern                 : (&#39;parent&#39;,&#39;%-&#39;,&#39;%state&#39;);
+$gridle-centered-name-pattern             : (&#39;centered&#39;,&#39;%-&#39;,&#39;%state&#39;);
+
+$gridle-parent-vertical-align-middle-name-pattern         : (&#39;parent&#39;,&#39;%-&#39;,&#39;vertical&#39;,&#39;%-&#39;,&#39;align&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;middle&#39;);
+$gridle-parent-vertical-align-top-name-pattern         : (&#39;parent&#39;,&#39;%-&#39;,&#39;vertical&#39;,&#39;%-&#39;,&#39;align&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;top&#39;);
+$gridle-parent-vertical-align-bottom-name-pattern         : (&#39;parent&#39;,&#39;%-&#39;,&#39;vertical&#39;,&#39;%-&#39;,&#39;align&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;bottom&#39;);
+
+$gridle-hide-name-pattern                 : (&#39;hide&#39;,&#39;%-&#39;,&#39;%state&#39;);
+$gridle-show-name-pattern                 : (&#39;show&#39;,&#39;%-&#39;,&#39;%state&#39;);
+$gridle-show-inline-name-pattern             : (&#39;show&#39;,&#39;%-&#39;,&#39;inline&#39;,&#39;%-&#39;,&#39;%state&#39;) !default;
+$gridle-not-visible-name-pattern             : (&#39;not&#39;,&#39;%-&#39;,&#39;visible&#39;,&#39;%-&#39;,&#39;%state&#39;);
+$gridle-visible-name-pattern                 : (&#39;visible&#39;,&#39;%-&#39;,&#39;%state&#39;);
+
+$gridle-float-left-name-pattern             : (&#39;float&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;left&#39;);
+$gridle-float-right-name-pattern             : (&#39;float&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;right&#39;);
+
+$gridle-clear-name-pattern                 : (&#39;clear&#39;,&#39;%-&#39;,&#39;%state&#39;);
+$gridle-clear-left-name-pattern             : (&#39;clear&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;left&#39;);
+$gridle-clear-right-name-pattern             : (&#39;clear&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;right&#39;);
+$gridle-clear-each-pattern                 : (&#39;clear&#39;,&#39;%-&#39;,&#39;each&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;%count&#39;);
+
+$gridle-no-gutters-name-pattern             : (&#39;no&#39;,&#39;%-&#39;,&#39;gutters&#39;,&#39;%-&#39;,&#39;%state&#39;);
+$gridle-no-gutter-left-name-pattern             : (&#39;no&#39;,&#39;%-&#39;,&#39;gutter&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;left&#39;);
+$gridle-no-gutter-right-name-pattern         : (&#39;no&#39;,&#39;%-&#39;,&#39;gutter&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;right&#39;);
+$gridle-no-gutter-top-name-pattern             : (&#39;no&#39;,&#39;%-&#39;,&#39;gutter&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;top&#39;);
+$gridle-no-gutter-bottom-name-pattern         : (&#39;no&#39;,&#39;%-&#39;,&#39;gutter&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;bottom&#39;);
+
+$gridle-no-margins-name-pattern             : (&#39;no&#39;,&#39;%-&#39;,&#39;margins&#39;,&#39;%-&#39;,&#39;%state&#39;);
+$gridle-no-margin-left-name-pattern         : (&#39;no&#39;,&#39;%-&#39;,&#39;margin&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;left&#39;);
+$gridle-no-margin-right-name-pattern         : (&#39;no&#39;,&#39;%-&#39;,&#39;margin&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;right&#39;);
+$gridle-no-margin-top-name-pattern         : (&#39;no&#39;,&#39;%-&#39;,&#39;margin&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;top&#39;);
+$gridle-no-margin-bottom-name-pattern         : (&#39;no&#39;,&#39;%-&#39;,&#39;margin&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;bottom&#39;);
+
+$gridle-gutters-name-pattern             : (&#39;gutters&#39;,&#39;%-&#39;,&#39;%state&#39;);
+$gridle-gutter-left-name-pattern             : (&#39;gutters&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;left&#39;);
+$gridle-gutter-right-name-pattern             : (&#39;gutter&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;right&#39;);
+$gridle-gutter-top-name-pattern             : (&#39;gutter&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;top&#39;);
+$gridle-gutter-bottom-name-pattern         : (&#39;gutter&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;bottom&#39;);
+
+$gridle-margins-name-pattern             : (&#39;margins&#39;,&#39;%-&#39;,&#39;%state&#39;);
+$gridle-margin-left-name-pattern             : (&#39;margin&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;left&#39;);
+$gridle-margin-right-name-pattern             : (&#39;margin&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;right&#39;);
+$gridle-margin-top-name-pattern             : (&#39;margin&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;top&#39;);
+$gridle-margin-bottom-name-pattern         : (&#39;margin&#39;,&#39;%-&#39;,&#39;%state&#39;,&#39;%-&#39;,&#39;bottom&#39;);
+</code></pre>
