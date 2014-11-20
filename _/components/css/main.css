@@ -867,6 +867,10 @@ body {
       padding-right: 1%;
       width: 33.33333%;
       left: 16.66667%;
+      float: left;
+      direction: ltr;
+      padding-left: 1%;
+      padding-right: 1%;
       text-align: center; }
       @media screen and (max-width: 400px) {
         .banner .banner-container .banner-content {
@@ -874,6 +878,15 @@ body {
           direction: ltr;
           padding-left: 1%;
           padding-right: 1%; } }
+      @media screen and (max-width: 400px) {
+        .banner .banner-container .banner-content {
+          float: left;
+          direction: ltr;
+          padding-left: 1%;
+          padding-right: 1%; } }
+      @media screen and (max-width: 400px) {
+        .banner .banner-container .banner-content {
+          width: 100%; } }
       .banner .banner-container .banner-content .banner-logo {
         max-width: 75%;
         max-height: 75%; }
@@ -897,6 +910,10 @@ body {
       padding-right: 1%;
       width: 50%;
       float: left;
+      direction: ltr;
+      padding-left: 1%;
+      padding-right: 1%;
+      float: left;
       background: url("/sass/assets/images/blog.jpg") no-repeat 0 0;
       background-position: center center;
       background-size: cover;
@@ -907,12 +924,25 @@ body {
           direction: ltr;
           padding-left: 1%;
           padding-right: 1%; } }
+      @media screen and (max-width: 400px) {
+        .desc-images .box .desc-image, .desc-images .box-bottom .desc-image {
+          float: left;
+          direction: ltr;
+          padding-left: 1%;
+          padding-right: 1%; } }
+      @media screen and (max-width: 400px) {
+        .desc-images .box .desc-image, .desc-images .box-bottom .desc-image {
+          width: 100%; } }
     .desc-images .box .desc, .desc-images .box-bottom .desc {
       float: left;
       direction: ltr;
       padding-left: 1%;
       padding-right: 1%;
       width: 50%;
+      float: left;
+      direction: ltr;
+      padding-left: 1%;
+      padding-right: 1%;
       height: 100%;
       float: right; }
       @media screen and (max-width: 400px) {
@@ -921,6 +951,15 @@ body {
           direction: ltr;
           padding-left: 1%;
           padding-right: 1%; } }
+      @media screen and (max-width: 400px) {
+        .desc-images .box .desc, .desc-images .box-bottom .desc {
+          float: left;
+          direction: ltr;
+          padding-left: 1%;
+          padding-right: 1%; } }
+      @media screen and (max-width: 400px) {
+        .desc-images .box .desc, .desc-images .box-bottom .desc {
+          width: 100%; } }
       .desc-images .box .desc .desc-content, .desc-images .box-bottom .desc .desc-content {
         position: relative;
         top: 50%;
@@ -1015,4 +1054,4 @@ body {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     text-align: center;
-    font-size: .6rem; }
+    font-size: 1rem; }
