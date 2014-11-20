@@ -4,45 +4,46 @@
     @include gridle_container();
     width: 100%;
     height: 50%;
-    background-color:#8f322f;
+    background-color: $primary-light-color;
     .desc-image {
-      @include gridle_set( ( grid:6 ) );
-      float:left;
+      @include gridle_set( ( grid:6, mobile:(grid:12) ) );
+      float: left;
       background: url("#{$assetPath}/images/blog.jpg") no-repeat 0 0;
       background-position: center center;
       background-size: cover;
-    //  background-color: #464646;
-      height:100%;
+      //  background-color: #464646;
+      height: 100%;
     }
-    .desc{
-      @include gridle_set( ( grid:6 ) );
-      height:100%;
-      float:right;
-      .desc-content{
+    .desc {
+      @include gridle_set( ( grid:6, mobile:(grid:12) ) );
+      height: 100%;
+      float: right;
+      .desc-content {
         @include vertical-align();
-        text-align:center;
-        .desc-title{
-          font-size:2rem;
-          color:$text-color-secondary;
+        text-align: center;
+        .desc-title {
+          font-size: 2rem;
+          color: $text-color-secondary;
         }
-        .desc-text{
+        .desc-text {
 
         }
       }
     }
+
   }
-  .box-bottom{
-  //  background-color:#b13c3f;
+  .box-bottom {
+    //  background-color:#b13c3f;
     @extend .box;
-    .desc-image{
-      float:right;
+    .desc-image {
+      float: right;
       background: url("#{$assetPath}/images/portfolio.jpg") no-repeat 0 0;
       background-position: center center;
       background-size: cover;
-      height:100%;
+      height: 100%;
     }
-    .desc{
-      float:left;
+    .desc {
+      float: left;
     }
   }
 }

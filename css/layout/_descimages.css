@@ -9,9 +9,9 @@ Error: Undefined mixin 'gridle_container'.
 4:     @include gridle_container();
 5:     width: 100%;
 6:     height: 50%;
-7:     background-color:#8f322f;
+7:     background-color: $primary-light-color;
 8:     .desc-image {
-9:       @include gridle_set( ( grid:6 ) );
+9:       @include gridle_set( ( grid:6, mobile:(grid:12) ) );
 
 Backtrace:
 _descimages.scss:4:in `gridle_container'
@@ -75,4 +75,4 @@ _descimages.scss:4
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'gridle_container'.\A         on line 4 of _descimages.scss, in `gridle_container'\A         from line 4 of _descimages.scss\A \A 1: .desc-images {\A 2:   width: 100%;\A 3:   .box {\A 4:     @include gridle_container();\A 5:     width: 100%;\A 6:     height: 50%;\A 7:     background-color:#8f322f;\A 8:     .desc-image {\A 9:       @include gridle_set( ( grid:6 ) );"; }
+  content: "Error: Undefined mixin 'gridle_container'.\A         on line 4 of _descimages.scss, in `gridle_container'\A         from line 4 of _descimages.scss\A \A 1: .desc-images {\A 2:   width: 100%;\A 3:   .box {\A 4:     @include gridle_container();\A 5:     width: 100%;\A 6:     height: 50%;\A 7:     background-color: $primary-light-color;\A 8:     .desc-image {\A 9:       @include gridle_set( ( grid:6, mobile:(grid:12) ) );"; }
