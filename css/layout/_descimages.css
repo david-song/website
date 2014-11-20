@@ -1,0 +1,78 @@
+/*
+Error: Undefined mixin 'gridle_container'.
+        on line 4 of _descimages.scss, in `gridle_container'
+        from line 4 of _descimages.scss
+
+1: .desc-images {
+2:   width: 100%;
+3:   .box {
+4:     @include gridle_container();
+5:     width: 100%;
+6:     height: 50%;
+7:     background-color:#8f322f;
+8:     .desc-image {
+9:       @include gridle_set( ( grid:6 ) );
+
+Backtrace:
+_descimages.scss:4:in `gridle_container'
+_descimages.scss:4
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:338:in `block in visit_mixin'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:98:in `block in with_mixin'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:115:in `with_frame'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:98:in `with_mixin'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:336:in `visit_mixin'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:79:in `block in with_base'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:115:in `with_frame'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:79:in `with_base'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:420:in `map'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:79:in `block in with_base'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:115:in `with_frame'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:79:in `with_base'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:420:in `map'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:79:in `block in with_base'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:115:in `with_frame'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/stack.rb:79:in `with_base'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:52:in `map'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/root_node.rb:36:in `css_tree'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/exec/sass_scss.rb:396:in `run'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/exec/base.rb:52:in `parse'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/lib/sass/exec/base.rb:19:in `parse!'
+/home/david/.prepros/resources/app/ruby/ruby_gems/gems/sass-3.4.6/bin/sass:13:in `<top (required)>'
+/home/david/.prepros/resources/app/ruby/loader.rb:15:in `load'
+/home/david/.prepros/resources/app/ruby/loader.rb:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'gridle_container'.\A         on line 4 of _descimages.scss, in `gridle_container'\A         from line 4 of _descimages.scss\A \A 1: .desc-images {\A 2:   width: 100%;\A 3:   .box {\A 4:     @include gridle_container();\A 5:     width: 100%;\A 6:     height: 50%;\A 7:     background-color:#8f322f;\A 8:     .desc-image {\A 9:       @include gridle_set( ( grid:6 ) );"; }

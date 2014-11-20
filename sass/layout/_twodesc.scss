@@ -1,7 +1,7 @@
 .twodesc {
   padding: 2%;
   @include gridle_container();
-  height: 45%;
+  height: 50%;
 
   border: solid 1px #000;
   .desc1 {
@@ -12,17 +12,28 @@
     );
     text-align: center;
     height: 100%;
-    background: #edc360;
-    border: solid 1px #000;
+    background: url("#{$assetPath}/images/portfolio.jpg") no-repeat 0 0;
+    background-position: center center;
+    background-size: cover;
+    opacity: 0.9;
     h2{
-      padding: 2% 0% 2% 0%; 
+      font-size: 2.2rem;
+      padding: 4% 0% 4% 0%;
+      color: $text-color-secondary;
     }
   }
   .desc2 {
     @include gridle_set(( grid : 6, mobile : ( grid : 12 ) ));
     height: 100%;
     text-align: center;
-    background: #edc360;
-    border: solid 1px #000;
+     opacity: 0.9;
+    background: url("#{$assetPath}/images/blog.jpg") no-repeat 0 0;
+    background-position: center center;
+    background-size: cover;
+    h2{
+      font-size: 2.2rem;
+      padding: 4% 0% 4% 0%;
+      color: $text-color-secondary;
+    }
   }
 }
