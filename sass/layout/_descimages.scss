@@ -1,10 +1,14 @@
 .desc-images {
   width: 100%;
+  z-index:1;
+  @include z-depth(1);
+  position:relative;
   .box {
+
     @include gridle_container();
     width: 100%;
     height: 50%;
-    background-color: $primary-light-color;
+    background-color: $primary-color;
     .desc-image {
       @include gridle_set( ( grid:6, mobile:(grid:12) ) );
       float: left;
@@ -13,6 +17,7 @@
       background-size: cover;
       //  background-color: #464646;
       height: 100%;
+
     }
     .desc {
       @include gridle_set( ( grid:6, mobile:(grid:12) ) );
@@ -22,6 +27,7 @@
         @include vertical-align();
         text-align: center;
         .desc-title {
+          padding:2% 0 2% 0;
           font-size: 2rem;
           color: $text-color-secondary;
         }

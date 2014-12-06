@@ -1,0 +1,40 @@
+.about-me{
+  height:80%;
+  background-color:$primary-color;
+  text-align:center;
+  width:100%;
+  z-index:2;
+  position:relative;
+  @include z-depth(1);
+  .about-name{
+      font-size:3rem;
+      padding:2% 0 2% 0;
+      color:$secondary-color;
+  }
+  .about-image{
+      border-radius:50%;
+      height:35%;
+  }
+  .about-quote{
+     @include gridle_centered();
+      padding:2% 0 2% 0;
+      width:50%;
+  }
+  .about-social{
+      padding:2% 0 2% 0;
+  }
+  .fa-square{
+    color:$color-icons;
+  }
+  .fa-twitter, .fa-instagram, .fa-youtube, .fa-github, .fa-envelope{
+    color:$secondary-color;
+  }
+  about-social{
+    max-width:80%;
+    @include gridle_centered();
+  }
+  .social{
+
+    padding-left:2%;
+  }
+}

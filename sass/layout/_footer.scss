@@ -1,9 +1,10 @@
 .footer {
+  
   @include gridle_container();
   .footer-section {
     @include gridle_container();
     padding: 4% 2%;
-    background-color: $primary-light-color;
+    background-color: $primary-color-light;
     .footer-social {
       @include gridle_set(( grid: 3, mobile:( grid: 12) ));
     }

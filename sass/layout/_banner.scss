@@ -1,33 +1,37 @@
 $float: left;
 .banner {
+
   @include gridle_container();
+  z-index:3;
+  position:relative;
+  @include z-depth(1);
   color:$text-color-primary;
   height: 90%;
-  padding: 6% 2% 0;
-  background: url("#{$assetPath}/images/banner.jpg") no-repeat 0 0;
+  //padding: 6% 2% 0;
+  background: url("#{$assetPath}/images/banner1.jpg") no-repeat 0 0;
   background-position: center center;
   background-size: cover;
   background-color: #464646;
 
   .banner-container {
-
     height: 100%;
     width: 100%;
     .banner-content {
-      @include gridle_set(( grid:4, push:2, mobile:(grid:12) ));
+      @include gridle_set((centered:true,grid:4, mobile:(grid:12) ));
       text-align: center;
-
-      .banner-logo{
-        max-width:75%;
-        max-height:75%;
-      }
       .banner-title{
-        font-size:3rem;
-        color:$text-color-secondary;
+        font-size:2rem;
+        color:$primary-color;
+        padding:0 0 4% 0;
       }
       .banner-text{
-        font-size:1.7rem;
-        color:$text-color-secondary;
+        font-size:2rem;
+        color:$primary-color;
+        padding: 4% 0 0 0;
+      }
+      .banner-highlight{
+        font-size:3rem;
+        color: $secondary-color;
       }
     }
   }

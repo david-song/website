@@ -1,10 +1,11 @@
 @import "mdcolors";
-$primary-color: $grey-900;
-$primary-light-color: $grey-800;
+$primary-color: $grey-50;
+$color-icons:$grey-200;
+$primary-color-light: $grey-500;
 $secondary-color:$blue-500;
-$reset-color: $grey-100;
+$reset-color: $grey-700;
 
-$text-color-primary: $grey-100;
+$text-color-primary: $primary-color-light;
 $text-color-secondary: $secondary-color;
 $text-color-reset: $reset-color;
 
