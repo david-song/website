@@ -2,4 +2,6 @@
 @import "buttons";
 @import "../helpers/functions";
 @import "fancy";
+@import "vendor/gridle/sass/gridle/gridle";
+@import "layout/grid";
 $assetPath : "/sass/assets";

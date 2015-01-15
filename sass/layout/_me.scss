@@ -1,11 +1,11 @@
 .about-me{
-  height:80%;
+  height:auto;
   background-color:$primary-color;
-  text-align:center;
   width:100%;
   z-index:2;
   position:relative;
   @include z-depth(1);
+    text-align: center;
   .about-name{
       font-size:3rem;
       padding:2% 0 2% 0;
@@ -13,15 +13,19 @@
   }
   .about-image{
       border-radius:50%;
-      height:35%;
+      height:30%;
+      margin-bottom:4%;
   }
   .about-quote{
      @include gridle_centered();
       padding:2% 0 2% 0;
-      width:50%;
+      width:80%;
+      font-size:1.2rem;
+      display: block;
+      text-align:none;
   }
   .about-social{
-      padding:2% 0 2% 0;
+      padding:4% 0 4% 0;
   }
   .fa-square{
     color:$color-icons;
@@ -29,12 +33,22 @@
   .fa-twitter, .fa-instagram, .fa-youtube, .fa-github, .fa-envelope{
     color:$secondary-color;
   }
+
   about-social{
-    max-width:80%;
+    max-width:100%;
+    padding:6% 0;
     @include gridle_centered();
   }
   .social{
-
+    padding-top:6%;
     padding-left:2%;
   }
+  hr {
+        width: 40%;
+        margin: 0 auto;
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+      }
 }

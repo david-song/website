@@ -1,0 +1,170 @@
+---
+layout: default
+title: Blog
+---
+<html>
+    <head>
+        <title>Blog</title>
+        <link rel="stylesheet" href="/_/components/css/main.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="nav animated fadeIn noBackground">
+            <ul class="nav-title-area">
+                <li class="nav-title vertical-align">
+                    <a href="index.html">
+                    <p class="nav-title">David Song<p>
+                    </a>
+                </li>
+            </ul>
+            <section class="nav-section">
+                <ul class="vertical-align nav-content">
+                    <li><a href="/index.html">Home</a>
+                        <li><a href="index.html">Blog</a>
+                        </li>
+                        <li><a href="/projects.html">Projects</a>
+                        </li>
+                        <li><a href="/about.html">About</a>
+                        </li>
+                    </ul>
+                    <div class="menu-button-container">
+                        <a class="menu-button">
+                        <li>
+                            <span class="fa-stack">
+                            <!-- <i class="fa fa-square-o fa-stack-2x"></i> -->
+                            <i class="fa fa-navicon fa-stack-1x"></i>
+                            </span>
+                        </li>
+                        </a>
+                    </div>
+                    <nav class="menu">
+                        <li class="close-menu-container"><a class="close-menu"><i class="fa fa-close"></i></a></li>
+                        <div class="menu-section">
+                            <li><a href="index.html">Home</a>
+                                <hr>
+                                <li><a href="blog.html">Blog</a>
+                                    <hr>
+                                    <li><a href="projects.html">Projects</a>
+                                    </li>
+                                    <hr>
+                                    <li><a href="about.html">About</a>
+                                    </li>
+                                </li>
+                            </div>
+                            <div class="menu-end"><li></li></div>
+                        </nav>
+                    </section>
+                </nav>
+                <div class="blog-main">
+                    <div class="blog-top">
+                        <div class="blog-heading">
+                            <p class="blog-title">David's Blog</p><br>
+                            <p class="blog-desc">Good information from me<p>
+                            <div class="blog-social">
+                                <a href="social">
+                                <span class="fa-stack fa-lg">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x"></i>
+                                </span>
+                                </a>
+                                <a href="social">
+                                <span class="fa-stack fa-lg">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa fa-instagram fa-stack-1x"></i>
+                                </span>
+                                </a>
+                                <a href="social">
+                                <span class="fa-stack fa-lg">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa fa-youtube fa-stack-1x"></i>
+                                </span>
+                                </a>
+                                <a href="social">
+                                <span class="fa-stack fa-lg">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x"></i>
+                                </span>
+                                </a>
+                                <a href="social">
+                                <span class="fa-stack fa-lg">
+                                <i class="fa fa-square fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x"></i>
+                                </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-overlay"></div>
+                    <div class="blog-main-items">
+                        <div class="blog-main-1 blog-item">
+                            <div class="main-item-content">
+                                <p class="main-item-title">Lorem</p>
+                                <p class="main-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="blog-main-2 blog-item">
+                            <div class="main-item-content">
+                                <p class="main-item-title">Lorem</p>
+                                <p class="main-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="blog-main-3 blog-item">
+                            <div class="main-item-content">
+                                <p class="main-item-title">Lorem</p>
+                                <p class="main-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="blog-main-4 blog-item">
+                            <div class="main-item-content">
+                                <p class="main-item-title">Lorem</p>
+                                <p class="main-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="blog-main-5 blog-item">
+                            <div class="main-item-content">
+                                <p class="main-item-title">Lorem</p>
+                                <p class="main-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                        <div class="blog-main-6 blog-item">
+                            <div class="main-item-content">
+                                <p class="main-item-title">Lorem</p>
+                                <p class="main-item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-feed">
+                        {% for post in site.posts %}
+                        <div class="blog-post">
+                            <p class="post-tile"><a href="{{post.url}}">{{post.title}}</a></p>
+                            <p class="post-date">{{post.date}}{</p>
+                            <p class="post-desc">{{post.excerpt | remove: '<p>' | remove: '</p>'}} </p>
+                        </div>
+                        {% endfor %}
+                        <!-- <div class="pagination">
+                            {% if paginator.previous_page %}
+                            	<a href="{{paginator.previous_page_path}}" class="previous">Previous</a>
+                            {% else %}
+								<div class="previous">Previous</div>
+							{% endif %}
+								<div class="page-number">Page: {{paginator.page}} of {{paginator.total_pages}}</div>
+							{% if paginator.next_page %}
+								<a href="{{paginator.next_page_path}}" class="next"></a>
+							{% else %}
+								<div class="next">Next</div>
+							{% endif %}
+                        </div> -->
+                    </div>
+                    <div class="blog-aside">
+						<div class="tag tag-tech">Tech</div>
+						<div class="tag tag-photo">Photography</div>
+						<div class="tag tag-life">Life</div>
+						<div class="tag tag-business">Business</div>
+                    </div>
+                </div>
+                <div class="footer">
+                </div>
+            </body>
+        </html>

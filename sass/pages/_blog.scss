@@ -1,0 +1,14 @@
+@import "components/nav";
+@import "layout/blog-main";
+@import "layout/footer";
+
+.blog-post{
+	width:100%;
+	height:20%;
+	.post-title{
+	font-size: 2rem;
+	}
+	.post-desc{
+	font-size:1.2rem;
+	}
+}

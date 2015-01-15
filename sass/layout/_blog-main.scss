@@ -1,0 +1,93 @@
+.blog-main {
+	width: 100%;
+	height: 70%;
+	.blog-top {
+		width: 100%;
+		height: 100%;
+		color: $primary-color;
+		@include gridle_container();
+		z-index: 3;
+		.blog-heading {
+			z-index: 3;
+			@include gridle(5);
+			@include gridle_prefix(1);
+			@include gridle_suffix(6);
+			@include vertical-align();
+			height: auto;
+			.blog-title {
+				font-size: 2.7rem;
+				padding: 3% 0;
+				color: $primary-color;
+			}
+			.blog-desc {
+				font-size: 1.8rem;
+				padding: 3% 0;
+				color: $primary-color;
+			}
+			.blog-social {
+				width: 100%;
+				padding: 3% 0;
+				height: auto;
+				.fa-square {
+					color: $color-icons;
+				}
+				.fa-twitter, .fa-instagram, .fa-youtube, .fa-github, .fa-envelope {
+					color: $secondary-color;
+				}
+			}
+		}
+	}
+	.blog-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 70%;
+		width: 100%;
+		z-index: 2;
+		background-color: #D32F2F;
+		opacity: .8;
+	}
+	.blog-main-items {
+		width: 100%;
+		height: 70%;
+		//Mirrors size of the parent, blog-main
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		.blog-item {
+			@include gridle(4);
+			@include z-depth(1);
+			height: 50%;
+			.main-item-content {
+				padding: 5%;
+				@include vertical-align();
+				.main-item-title {
+					font-size: 1.5rem;
+					padding: 1% 0;
+					text-align: center;
+				}
+				.main-item-desc {
+					font-size: 1rem;
+					padding: 1% 0;
+				}
+			}
+		}
+	}
+}
+.blog-content {
+	z-index: 100;
+	width: 100%;
+	top: 70%;
+	position: absolute;
+	@include gridle_container();
+	.blog-feed {
+		@include gridle(9);
+		height: 100%;
+		background-color: #FF4081;
+	}
+	.blog-aside {
+		@include gridle(3);
+		min-height: 40%;
+		background-color: #B6B6B6;
+	}
+}

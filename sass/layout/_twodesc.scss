@@ -2,7 +2,7 @@
   padding: 2%;
   @include gridle_container();
   height: 50%;
-
+  position:relative;
   border: solid 1px #000;
   .desc1 {
     @include gridle_set(
