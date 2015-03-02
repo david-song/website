@@ -332,38 +332,67 @@ video#bgvid {
 .wrapper {
   height: 100%;
   width: 100%;
+  margin: 0 auto;
   background-color: black; }
 
 .grid-title {
   height: 20%;
   font-size: 3rem;
-  padding: 2%;
+  padding: 2rem;
+  color: white;
   width: 100%;
   margin: 0; }
 
 .grid {
-  min-height: 80%;
+  height: 80%;
   width: 100%;
   background-color: pink;
   margin: 0; }
   .grid .row {
     width: 100%;
+    margin: 0 auto;
     height: 40%;
     background-color: blue;
     padding: 0 4% 0 4%; }
     .grid .row .item {
       height: 100%;
       width: 23%;
+      float: left;
       background-color: red;
-      background-image: url(http://lorempixel.com/400/400/); }
+      position: relative;
+      transition: all 500ms ease;
+      background-image: url("http://lorempixel.com/400/400"); }
       .grid .row .item .item-title {
         font-size: 2.5rem;
         text-align: center;
         width: 100%;
         position: relative;
         top: 50%;
-        transform: translateY(-50%); }
-    .grid .row .item:hover .grid-title {
-      color: pink; }
+        color: white;
+        z-index: 1;
+        transform: translateY(-50%);
+        transition: opacity 500ms ease; }
+      .grid .row .item .item-content {
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        opacity: 0;
+        transition: opacity 500ms ease;
+        position: absolute;
+        top: 0;
+        left: 0; }
+        .grid .row .item .item-content .item-text {
+          position: relative;
+          text-align: center;
+          width: 100%;
+          top: 50%;
+          transform: translateY(-50%); }
+    .grid .row .item:hover > .item-content {
+      opacity: 1; }
+    .grid .row .item:hover .item-title {
+      opacity: 0; }
 
 /*# sourceMappingURL=stylesheet.css.map */
