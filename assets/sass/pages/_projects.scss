@@ -1,0 +1,42 @@
+.wrapper{
+  height:100%;
+  width:100%;
+  background-color:black;
+}
+.grid-title{
+  height:20%;
+  font-size:3rem;
+  padding:2%;
+  width:100%;
+  margin:0;
+}
+.grid{
+  min-height:80%;
+  width:100%;
+  background-color:pink;
+  margin:0;
+  .row{
+    width:100%;
+    height:40%;
+    background-color:blue;
+    padding:0 4% 0 4%;
+    .item{
+      height:100%;
+      width:23%;
+      background-color:red;
+      background-image:url(http://lorempixel.com/400/400/);
+      .item-title{
+        font-size:2.5rem;
+        text-align:center;
+        width:100%;
+        position:relative;
+        top:50%;
+        transform:translateY(-50%);
+      }
+    }
+    .item:hover .grid-title{
+      color:pink;
+    }
+
+  }
+}

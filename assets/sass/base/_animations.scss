@@ -1,0 +1,61 @@
+.rotate-90{
+  animation-name: rotate-90;
+  -webkit-animation-name: rotate-90;
+
+  animation-duration:1s;
+  -webkit-animation-duration:1s;
+
+  animation-timing-function:ease;
+  -webkit-animation-timing-function:ease;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  visibility: visible !important;
+}
+@keyframes rotate-90{
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@-webkit-keyframes rotate-90{
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+.rotate{
+  transform: rotate(-90deg);
+  animation-timing-function:ease;
+  -webkit-animation-timing-function:ease;
+}
+.rotate90{
+  animation-name: rotate90;
+  -webkit-animation-name: rotate90;
+
+  animation-duration:1s;
+  -webkit-animation-duration:1s;
+
+  animation-timing-function:ease;
+  -webkit-animation-timing-function:ease;
+
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  visibility: visible !important;
+}
+@keyframes rotate90 {
+  0%{
+    transform:rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@-webkit-keyframes rotate90{
+  0%{
+    transform:rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
