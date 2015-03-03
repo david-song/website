@@ -1,25 +1,6 @@
 var clicked = false;
 $(document).ready(function(){
   $('.nav-link').hide();
-  $('.content-container').hide();
-  $('.content-projects').hide();
-  $('.content-blog').hide();
-});
-$(".button-projects").click(function(){
-  $('.wrapper').fadeOut();
-  $('.content-container').show();
-  $('.content-projects').fadeIn();
-});
-$(".button-blog").click(function(){
-  $('.wrapper').fadeOut();
-  $('.content-container').show();
-  $('.content-blog').fadeIn();
-});
-$(".fa-times").click(function(){
-  $('.content-blog').fadeOut();
-  $('.content-projects').fadeOut();
-  $('.wrapper').fadeIn();
-  $('.content-container').hide();
 });
 $(".nav-button").click(function(){
   if(clicked == false){
