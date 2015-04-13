@@ -1,13 +1,15 @@
 
-.wrapper{
-  height:100%;
+.projects{
+  height:auto;
   width:100%;
-	margin:0 auto;
+  margin:0 auto;
+  background-color:white;
+  overflow:auto;
 }
 .grid-title{
   height:auto;
   font-size:3rem;
-  padding-left:5%;
+  padding-left:4%;
   padding-top:2rem;
   padding-bottom:2rem;
   font-family:Roboto Slab;
@@ -23,34 +25,58 @@
   .row{
     width:100%;
 	margin:0 auto;
-    height:40%;
+    height:30%;
     padding:0 4% 0 4%;
+    .item:before {
+      content: "";
+      display: block;
+      position: absolute;
+      transition: all .3s linear;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    .item:hover:before{
+        background:none;
+    }
     .item{
       height:100%;
     //   width:25%;
+      background: rgba(0,0,255, 0.5);
+      overflow:hidden;
 	  float:left;
       background-color:red;
 	  position:relative;
 	  transition:all 500ms ease;
 	  margin:0 auto;
-      background-image:url('http://lorempixel.com/600/600');
-      .item-title{
-        font-size:2.5rem;
-        text-align:center;
-        width:100%;
-        position:relative;
-        top:50%;
-		color:white;
-		z-index:1;
-        transform:translateY(-50%);
-		transition:opacity 500ms ease;
-      }
+	  
+	  .item-image{
+	      display:block;
+	      z-index:-3;
+	      margin:0 auto;
+	  }
+//       .item-title{
+//         font-size:2.5rem;
+//         text-align:center;
+//         width:100%;
+//         position:relative;
+//         top:50%;
+// 		color:white;
+// 		z-index:1;
+//         transform:translateY(-50%);
+// 		transition:opacity 500ms ease;
+//       }
+            .item-title{
+                font-size:2.5rem;
+                font-padding:1rem;
+            }
 			.item-content{
 				text-align:center;
 				width:100%;
 				margin:0 auto;
 				color:white;
-				background: rgba(0,0,0,0.5);
+			//	background: rgba(0,0,0,0.5);
 				height:100%;
 				opacity:0;
 				transition:opacity 500ms ease;
@@ -63,37 +89,80 @@
 					width:100%;
 					top:50%;
 					transform:translateY(-50%);
+					padding:.5em;
+					.item-desc{
+					    padding-top:1em;
+					}
 				}
 			}
     }
     .item:hover > .item-content{
       opacity:1;
     }
-		
-		.item:hover .item-title{
-			opacity:0;
-		}
-
   }
 }
 .footer{
-    height:10%;
+    margin-top:2%;
+    height:15%;
     width:100%;
     margin:0 auto;
-    position:relative;
+    clear:both;
+    padding-left:4%;
+    background-color:white;
+    p{
+        position:relative;
+        top:50%;
+        color:black;
+        transform:translateY(-50%);
+    }
 }
 @media (max-width:1200px){
     .item{
         width:50%;
+    }
+     .item-img{
+        margin:0 auto;
     }
 }
 @media (max-width:500px){
     .item{
         width:100%;
     }
+     .item-img{
+        margin:0 auto;
+    }
 }
 @media (min-width:1200px){
     .item{
-        width:25%;
+        width:20%;
     }
+    .item-imag{
+        margin:0 auto;
+    }
+}
+$bred:();
+$bblue:(100,181,246, .5);
+$byellow:(255,238,88, .5);
+$ggreen:(102,187,106, .5);
+$bpurple:(171,71,188, .5);
+// $colors:$bred, $bblue, $byellow, $ggreen, $bpurple;
+// @for $i from 1 through 12{
+//     .item-#{$i}{
+//         background:rgba(nth($colors, random(5)));
+//     }
+// }
+.item-programming:before{
+    background:rgba(239,83,80,.5);//red
+}
+.item-video:before{
+    background:rgba(100,181,246, .5);//blue
+}
+.item-design:before{
+    background:rgba(102,187,106, .5);//green
+}
+.item-personal:before{
+    background:rgba(171,71,188, .5);//purple
+}
+.item-etc:before{
+    background:rgba(255,238,88, .5);
 }

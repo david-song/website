@@ -1,6 +1,7 @@
 var clicked = false;
 $(document).ready(function(){
   $('.nav-link').hide();
+
 });
 $(".nav-button").click(function(){
   if(clicked == false){
