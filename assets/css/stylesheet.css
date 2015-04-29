@@ -40,9 +40,11 @@ html, body {
 @keyframes rotate-90 {
   100% {
     transform: rotate(-90deg); } }
+
 @-webkit-keyframes rotate-90 {
   100% {
     transform: rotate(-90deg); } }
+
 .rotate {
   transform: rotate(-90deg);
   animation-timing-function: ease;
@@ -62,13 +64,17 @@ html, body {
 @keyframes rotate90 {
   0% {
     transform: rotate(-90deg); }
+
   100% {
     transform: rotate(0); } }
+
 @-webkit-keyframes rotate90 {
   0% {
     transform: rotate(-90deg); }
+
   100% {
     transform: rotate(0); } }
+
 .wrapper {
   margin: 0 auto;
   width: 100%;
@@ -125,7 +131,7 @@ video#bgvid {
   }*/ }
   .title-container .title {
     font-size: 5rem;
-    font-family: 'Roboto Slab';
+    font-family: 'Raleway';
     text-align: center;
     margin: 0 auto; }
   .title-container .title-desc {
@@ -153,15 +159,15 @@ video#bgvid {
 .fa {
   margin: 2% 1% 0 1%;
   transition: all .2s ease-in-out; }
-  .fa-instagram:hover {
+  .fa.-instagram:hover {
     color: #517fa4; }
-  .fa-facebook:hover {
+  .fa.-facebook:hover {
     color: #3b5998; }
-  .fa-twitter:hover {
+  .fa.-twitter:hover {
     color: #55ACEE; }
-  .fa-google-plus:hover {
+  .fa.-google-plus:hover {
     color: #dd4b39; }
-  .fa-github:hover {
+  .fa.-github:hover {
     color: black; }
 
 .buttons {
@@ -192,12 +198,12 @@ video#bgvid {
   color: white; }
 
 .red:hover {
-  background-color: #F44336;
-  border-color: #F44336; }
+  background-color: #f44336;
+  border-color: #f44336; }
 
 .green:hover {
-  background-color: #4CAF50;
-  border-color: #4CAF50; }
+  background-color: #4caf50;
+  border-color: #4caf50; }
 
 /* Small Devices, Tablets */
 @media (max-width: 1200px) {
@@ -406,5 +412,3 @@ video#bgvid {
 
 .item-etc:before {
   background: rgba(255, 238, 88, 0.5); }
-
-/*# sourceMappingURL=stylesheet.css.map */
